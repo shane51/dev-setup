@@ -16,7 +16,7 @@ function runDots() {
             echo "Syncing the dev-setup repo to your local machine."
             echo "------------------------------"
             echo ""
-            cd ~ && curl -#L https://github.com/donnemartin/dev-setup/tarball/master | tar -xzv --strip-components 1 --exclude={README.md,LICENSE}
+            cd ~ && curl -#L https://github.com/shane51/dev-setup/commits/master | tar -xzv --strip-components 1 --exclude={README.md,LICENSE}
         fi
         if [ $ARG == "osxprep" ] || [ $ARG == "all" ]; then
             # Run the osxprep.sh Script
@@ -40,7 +40,31 @@ function runDots() {
             echo ""
             ./brew.sh
         fi
-        if [ $ARG == "osx" ] || [ $ARG == "all" ]; then
+        if [ $ARG == "pyauto" ] || [ $ARG == "all" ]; then
+            # Run the pydata.sh Script
+            echo "------------------------------"
+            echo "Setting up Python mobile automation development environment."
+            echo "------------------------------"
+            echo ""
+            ./pyauto.sh
+        fi
+        if [ $ARG == "appium" ] || [ $ARG == "all" ]; then
+            # Run the web.sh Script
+            echo "------------------------------"
+            echo "Setting up appium development environment."
+            echo "------------------------------"
+            echo ""
+            ./appium.sh
+        fi
+        if [ $ARG == "android" ] || [ $ARG == "all" ]; then
+            # Run the android.sh Script
+            echo "------------------------------"
+            echo "Setting up Android development environment."
+            echo "------------------------------"
+            echo ""
+            ./android.sh
+        fi
+        if [ $ARG == "CI" ] || [ $ARG == "all" ]; then
             # Run the osx.sh Script
             # I strongly suggest you read through the commented osx.sh
             # source file and tweak any settings based on your personal
@@ -50,50 +74,10 @@ function runDots() {
             # SSD section.
             echo ""
             echo "------------------------------"
-            echo "Setting sensible OSX defaults."
+            echo "Setting CI environment."
             echo "------------------------------"
             echo ""
-            ./osx.sh
-        fi
-        if [ $ARG == "pydata" ] || [ $ARG == "all" ]; then
-            # Run the pydata.sh Script
-            echo "------------------------------"
-            echo "Setting up Python data development environment."
-            echo "------------------------------"
-            echo ""
-            ./pydata.sh
-        fi
-        if [ $ARG == "aws" ] || [ $ARG == "all" ]; then
-            # Run the aws.sh Script
-            echo "------------------------------"
-            echo "Setting up AWS development environment."
-            echo "------------------------------"
-            echo ""
-            ./aws.sh
-        fi
-        if [ $ARG == "datastores" ] || [ $ARG == "all" ]; then
-            # Run the datastores.sh Script
-            echo "------------------------------"
-            echo "Setting up data stores."
-            echo "------------------------------"
-            echo ""
-            ./datastores.sh
-        fi
-        if [ $ARG == "web" ] || [ $ARG == "all" ]; then
-            # Run the web.sh Script
-            echo "------------------------------"
-            echo "Setting up JavaScript web development environment."
-            echo "------------------------------"
-            echo ""
-            ./web.sh
-        fi
-        if [ $ARG == "android" ] || [ $ARG == "all" ]; then
-            # Run the android.sh Script
-            echo "------------------------------"
-            echo "Setting up Android development environment."
-            echo "------------------------------"
-            echo ""
-            ./android.sh
+            ./CI.sh
         fi
     done
 

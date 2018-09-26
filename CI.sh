@@ -19,7 +19,10 @@ fi
 brew update
 
 brew cask install fastlane
+echo 'export PATH="$HOME/.fastlane/bin:$PATH"' >> ~/.bash_profile
 brew install jenkins-lts
 
 # Remove outdated versions from the cellar.
 brew cleanup
+source ~/.bash_profile
+

@@ -109,6 +109,7 @@ brew install carthage
 
 # Core casks
 # brew cask install --appdir="/Applications" alfred
+brew tap caskroom/versions
 brew cask install --appdir="~/Applications" java8
 
 
