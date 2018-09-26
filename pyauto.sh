@@ -6,12 +6,6 @@
 # This script might be run with .dots, which uses elevated privileges
 sudo -K
 
-echo "------------------------------"
-echo "Setting up pip."
-
-# Install pip
-easy_install pip
-
 ###############################################################################
 # Virtual Enviroments                                                         #
 ###############################################################################
@@ -22,8 +16,8 @@ echo "Setting up virtual environments."
 # Install virtual environments globally
 # It fails to install virtualenv if PIP_REQUIRE_VIRTUALENV was true
 export PIP_REQUIRE_VIRTUALENV=false
-pip install virtualenv
-pip install virtualenvwrapper
+pip3 install virtualenv
+pip3 install virtualenvwrapper
 
 echo "------------------------------"
 echo "Source virtualenvwrapper from ~/.extra"
@@ -38,60 +32,21 @@ echo "source /usr/local/bin/virtualenvwrapper.sh" >> $EXTRA_PATH
 echo "" >> $BASH_PROFILE_PATH
 source $EXTRA_PATH
 
-###############################################################################
-# Python 2 Virtual Enviroment                                                 #
-###############################################################################
-
-echo "------------------------------"
-echo "Setting up py2-data virtual environment."
-
-# Create a Python2 data environment
-mkvirtualenv py2-data
-workon py2-data
-
-# Install Python data modules
-pip install numpy
-pip install scipy
-pip install matplotlib
-pip install pandas
-pip install sympy
-pip install nose
-pip install unittest2
-pip install seaborn
-pip install scikit-learn
-pip install "ipython[all]"
-pip install bokeh
-pip install Flask
-pip install sqlalchemy
-pip install mysql-python
 
 ###############################################################################
 # Python 3 Virtual Enviroment                                                 #
 ###############################################################################
 
 echo "------------------------------"
-echo "Setting up py3-data virtual environment."
+echo "Setting up py3-auto virtual environment."
 
 # Create a Python3 data environment
-mkvirtualenv --python=/usr/local/bin/python3 py3-data
-workon py3-data
+mkvirtualenv --python=/usr/local/bin/python3 py3-auto
+workon py3-auto
 
 # Install Python data modules
-pip install numpy
-pip install scipy
-pip install matplotlib
-pip install pandas
-pip install sympy
-pip install nose
-pip install unittest2
-pip install seaborn
-pip install scikit-learn
-pip install "ipython[all]"
-pip install bokeh
-pip install Flask
-pip install sqlalchemy
-#pip install mysql-python  # Python 2 only, use mysqlclient instead
-pip install mysqlclient
+pip3 install Appium-Python-Client
+pip3 install -U airtest
 
 ###############################################################################
 # Install IPython Profile
