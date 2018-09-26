@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# ~/pydata.sh
+# ~/pyauto.sh
 
 # Removed user's cached credentials
 # This script might be run with .dots, which uses elevated privileges
@@ -26,7 +26,7 @@ EXTRA_PATH=~/.extra
 echo $EXTRA_PATH
 echo "" >> $EXTRA_PATH
 echo "" >> $EXTRA_PATH
-echo "# Source virtualenvwrapper, added by pydata.sh" >> $EXTRA_PATH
+echo "# Source virtualenvwrapper, added by pyauto.sh" >> $EXTRA_PATH
 echo "export WORKON_HOME=~/.virtualenvs" >> $EXTRA_PATH
 echo "source /usr/local/bin/virtualenvwrapper.sh" >> $EXTRA_PATH
 echo "" >> $BASH_PROFILE_PATH
@@ -61,5 +61,4 @@ cp -r init/profile_default/ ~/.ipython/profile_default
 
 echo "------------------------------"
 echo "Script completed."
-echo "Usage: workon py2-data for Python2"
-echo "Usage: workon py3-data for Python3"
+echo "Usage: workon py3-auto for Python3"
